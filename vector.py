@@ -12,6 +12,12 @@ class Vector(object):
         except TypeError:
             raise TypeError('The coordinates must be an iterable')
 
+    def plus(self, v):
+        new_coordinates = []
+        n = len(self.coordinates)
+        for i in range(n):
+            new_coordinates.append(self.coordinates[i] + v.coordinates[i])
+        return Vector(new_coordinates)
 
     def __str__(self):
         return 'Vector: {}'.format(self.coordinates)
