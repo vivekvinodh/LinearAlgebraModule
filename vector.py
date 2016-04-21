@@ -1,3 +1,5 @@
+import math
+
 class Vector(object):
     def __init__(self, coordinates):
         try:
@@ -27,6 +29,10 @@ class Vector(object):
         new_coordinates = [c*x for x in self.coordinates]
         return Vector(new_coordinates)
 
+    def magnitude(self):
+        coordinates_squared = [x**2 for x in self.coordinates]
+        return sqrt(sum(coordinates_squared))
+        
     def __str__(self):
         return 'Vector: {}'.format(self.coordinates)
 
